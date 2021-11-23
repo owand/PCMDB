@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body {
+  font: 1em 'Open Sans', sans-serif;
+  overflow: hidden;
+  background-color: #2D353E;
+}
+
+/* заголовок */
+#topbar {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #515c6b;
+  color: #ffff;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* кнопка меню */
+#hamburger {
+  cursor: pointer;
+  display: block;
+  float: left;
+  text-align: center;
+  width: 50px;
+}
+
+#sidebar-check {
+  display: none;
+}
+
+/* Переключаемая боковая панель навигациивыдвигающаяся по клику слева */
+#sidebar {
+  color: #fff;
+  overflow: auto;
+  /*  ширна элемента */
+  width: 320px;
+  min-width: 320px;
+  /* фиксируем и выставляем высоту панели на максимум */
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  margin: 0;
+  height: 100hv;
+  /* сдвигаем (прячем) панель относительно левого края страницы */
+  left: -320px;
+  /* внутренние отступы */
+  padding: 10px 10px;
+  /* плавный переход смещения панели */
+  transition: left 0.3s;
+  /* определяем цвет фона панели */
+  background: #1f252c;
+}
+
+#sidebar-check:checked ~ #sidebar {
+  transform: translate3d(320px, 0, 0);
+  position: absolute;
+}
+
+/* область содержания, когда меню закрыто */
+#main {
+  position: absolute;
+  overflow: hidden;
+  /*  ширна элемента */
+  width: 100%;
+  /* фиксируем и выставляем высоту элемента на максимум */
+  margin: 50px 0px 0px 0px;
+  height: 100%;
+  /* внутренние отступы */
+  padding: 0px 0px 50px 0px;
+}
+
+/* область содержания, когда меню открыто */
+#sidebar-check:checked ~ #main {
+  transform: translate3d(320px, 0, 0);
+  position: absolute;
+  overflow: hidden;
+  /*  ширна элемента */
+  width: 100%;
+  /* фиксируем и выставляем высоту элемента на максимум */
+  margin: 50px 0px 0px 0px;
+  height: 100%;
+  /* внутренние отступы */
+  padding: 0px 320px 50px 0px;
+}
+
+.category-check {
+  display: none;
+}
+
+.category .category-label {
+  user-select: none;
+  position: relative;
+  display: block;
+  /* высота строки категории */
+  line-height: 60px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.category .category-label:after {
+  float: right;
+  font-family: monospace;
+  content: "▲";
+  transition-duration: 300ms;
+  transform: rotate3d(0, 0, 1, 90deg);
+}
+
+.category-check:checked + .category .category-label:after {
+  transform: rotate3d(0, 0, 1, 180deg);
+}
+
+.category .category-list li {
+  display: block;
+  padding: 0 20px;
+  overflow: hidden;
+  height: 0;
+  line-height: 0;
+  margin-bottom: 0;
+  transition-duration: 300ms;
+}
+
+.category-check:checked + .category .category-list li {
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.category .category-list li label {
+  display: block;
+  cursor: pointer;
+}
+
+a {
+    color: #006b05;
+    text-decoration: none;
+}
