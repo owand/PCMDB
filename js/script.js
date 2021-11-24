@@ -95,8 +95,7 @@ function fetchDataFromSQLiteDB() {
 }
 
 function testSQLiteDB() {
-
-    var conn = SQL.connect({ Driver: "SQLite", Database: "\\PCMDBase.db" });
+    var conn = SQL.connect({ Driver: "SQLite", Database: "D:\\PCMDB\\PCMDBase.db" });
 
     if (conn.isValid == false) {
         alert("Result is not valid!")
