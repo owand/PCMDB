@@ -98,7 +98,6 @@ function testSQLiteDB() {
 
     var conn = SQL.connect({ Driver: "SQLite", Database: "\\PCMDBase.db" });
 
-    var result = conn.query("SELECT id, forename, surname, email, phone FROM addressbook;");
     if (conn.isValid == false) {
         alert("Result is not valid!")
 
