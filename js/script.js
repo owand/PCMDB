@@ -104,3 +104,34 @@ function testSQLiteDB() {
         alert("Result is valid!")
     }
 }
+
+const sqlite3 = require('sqlite3').verbose();
+
+const dbName = '../DBCatalog.db';
+const dbOptions = require('sqlite3').verbose().OPEN_READWRITE;
+
+function dbConnect() {
+    return new Promise((resolve, reject) => {
+        const db = new require('sqlite3').verbose().Database('../DBCatalog.db', require('sqlite3').verbose().OPEN_READWRITE, (error) => {
+            if (error) {
+                reject(error);
+                alert(error);
+            } else {
+                resolve(db);
+                alert(error);
+            }
+        });
+    });
+}
+
+
+function test() {
+    alert("Result is valid!");
+}
+
+function init() {
+    const dirName = require('path').dirname('../DBCatalog.db');
+    if (!fs.existsSync(dirName)) {
+      fs.mkdirSync(dirName, { recursive: true });
+    }
+}
