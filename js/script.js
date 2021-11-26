@@ -132,6 +132,15 @@ function test() {
 function init() {
     const dirName = require('path').dirname('../DBCatalog.db');
     if (!fs.existsSync(dirName)) {
-      fs.mkdirSync(dirName, { recursive: true });
+        fs.mkdirSync(dirName, { recursive: true });
     }
 }
+
+var db = tpenDatabase('my_db', '1.0', 'test', 2 * 1024 * 1024, function () {
+    console.log('БД открыта!')
+
+}, function () {
+
+    Console.log('новая БД!')
+
+});
