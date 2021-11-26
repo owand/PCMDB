@@ -15,11 +15,13 @@
         if (window.cordova) {
             // Инициализация БД на устройстве
             db = $cordovaSQLite.openDB({ name: "webapp5.db", iosDatabaseLocation: 'default' });
+            alert('База данных успешно создана!');
         }
         else {
 
             // Инициализация БД в браузере
             db = window.openDatabase("webapp5.db", '1', 'webapp5', 1024 * 1024 * 100);
+            alert('База данных успешно создана!');
         }
     </script>
 </head>
