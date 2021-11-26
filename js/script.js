@@ -126,7 +126,13 @@ function dbConnect() {
 
 
 function test() {
-    alert("Result is valid!");
+    var dataBase = openDatabase("../DBCatalog.db", "1.0", "Student Table", 1024 * 1024, function () { });
+    if (!dataBase) {
+        alert('Ошибка создания базы данных!');
+    } else {
+        alert('База данных успешно создана!');
+    }
+    //alert("Result is valid!");
 }
 
 function init() {
@@ -144,5 +150,6 @@ var db = tpenDatabase('my_db', '1.0', 'test', 2 * 1024 * 1024, function () {
     Console.log('новая БД!')
 
 });
+
 
 
