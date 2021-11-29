@@ -84,13 +84,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
-  font-size: 100%;
   vertical-align: baseline;
-}
-
-html {
-  line-height: 1;
 }
 
 ol,
@@ -144,16 +138,13 @@ summary {
 }
 
 body {
-  font: 1em 'Open Sans', sans-serif;
+  font: 1em "Open Sans", sans-serif;
   overflow: hidden;
-  background-color: #2D353E;
+  background-color: #2d353e;
 }
 
 /* заголовок */
-#topbar {
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
+.topbar {
   user-select: none;
   background: #515c6b;
   color: #ffff;
@@ -282,6 +273,7 @@ body {
 }
 
 a {
-    color: #006b05;
-    text-decoration: none;
+  pointer-events: auto;
+  color: #006b05;
+  text-decoration: none;
 }
