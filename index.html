@@ -13,31 +13,29 @@
   <meta name='robots' content='index,follow'>
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700'>
-  <link rel='stylesheet' href='css/style.css'>
-  <link rel='stylesheet' href='css/nav-style.css'>
-  <script src="js/script.js"></script>
+  <link rel='stylesheet' href='css/menu-style.css'>
 </head>
 
-<body scrolling='no'>
+<body>
+   
   <!-- top -->
   <div class='topbar'>
-    <label for='sidebar-check' class='hamburger'>☰</label>
-    <div id='page-title'>Меню</div>
+    <label for='menu-check' class='hamburger'>☰</label>
+    <div class='page-title'>Меню</div>
   </div>
 
   <!-- meny -->
-  <div>
-    <input checked id='sidebar-check' type='checkbox'>
-    <div id='sidebar'>
+  <div class='content'>
+
+    <input checked id='menu-check' type='checkbox'>
+    <div id='menu'>
 
       <!-- Главная -->
       <input checked class='category-check' id='category-1' type='checkbox'>
       <div class='category'>
         <label class='category-label' for='category-1'>Главная</label>
         <ul class='category-list'>
-          <li><label for='sidebar-check'></label><a href='content/readme.html' target='main-content'>Проекты</a></label></li>
-          <li><a class="nav-link" href='content/readme.html' target='main-content' data-toggle='sidebar-check'>Проекты</a></li>
-          <li><label for='sidebar-check'>Главная</label></li>
+          <li><a class="nav-link" href='content/readme.html' target='main-content'>Проекты</a></li>
           <li><a class="nav-link" href='content/readme.html' target='main-content'>Договора</a></li>
           <li><a class="nav-link" href='content/readme.html' target='main-content'>Акты выполненых работ</a></li>
           <li><a class="nav-link" href='content/readme.html' target='main-content'>Рапорта</a></li>
@@ -91,6 +89,7 @@
     </div>
   </div>
 
+<script src="js/menu-script.js"></script>
 </body>
 
 </html>
